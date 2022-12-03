@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sanity/image-url": "^1.0.1",
     "dotenv": "^16.0.3",
     "next": "latest",
     "next-sanity": "^3.1.2",
