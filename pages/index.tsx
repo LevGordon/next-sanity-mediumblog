@@ -25,20 +25,27 @@ export default function Home({ posts }: Props) {
           <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div className="border rounded-lg group cursor-pointer overflow-hidden">
               {post.mainImage && (
-                <img className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage).url()} alt="" />
+                <img
+                  className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                  src={urlFor(post.mainImage).url()}
+                  alt=""
+                />
               )}
               <div className="flex justify-between p-5 bg-white">
                 <div>
                   <p className="text-lg font-bold">{post.title}</p>
-                  <p className="text-xs">{post.description} by {post.author.name}</p>
+                  <p className="text-xs mr-4">{post.description}</p>
                 </div>
-                {post.author.image && (
-                  <img
-                    className="h-12 w-12 rounded-full"
-                    src={urlFor(post.author.image).url()}
-                    alt=""
-                  />
-                )}
+                <div className="flex flex-col justify-center w-18">
+                  {post.author.image && (
+                    <img
+                      className="h-12 w-12 rounded-full"
+                      src={urlFor(post.author.image).url()}
+                      alt=""
+                    />
+                  )}
+                  <p className="text-[10px]">{post.author.name}</p>
+                </div>
               </div>
             </div>
           </Link>
