@@ -80,22 +80,46 @@ function Post({ post }: Props) {
         <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
 
         <form className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
-          <h3 className="text-sm text-yellow-500"> Enjoyed this article?</h3>
-          <h4 className="text-3xl font-bold"> Leave a comment below!</h4>
-          <hr className="py-3 mt-2" />
+            <h3 className="text-sm text-yellow-500"> Enjoyed this article?</h3>
+            <h4 className="text-3xl font-bold"> Leave a comment below!</h4>
+            <hr className="py-3 mt-2" />
+
+            <input 
+              {...register("_id")}
+              type="hidden"
+              name="_id"
+              value={post._id}
+
+
+            />
 
             <label className="block mb-5">
                 <span className="text-gray-7000">Name</span>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" type="text" placeholder="John Appleseed" />    
+                <input {...register("name", { required: true })} className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" type="text" placeholder="John Appleseed" />    
             </label>
             <label className="block mb-5">
                 <span className="text-gray-7000">Email</span>
-                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" type="text" placeholder="john.appleseed@email.com" />    
+                <input {...register("email", { required: true })} className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" type="text" placeholder="john.appleseed@email.com" />    
             </label>
             <label className="block mb-5">
                 <span className="text-gray-7000">Comment</span>
-                <textarea className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring" placeholder="I loved this post!" rows={8} />    
+                <textarea {...register("comment", { required: true })} className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring" placeholder="I loved this post!" rows={8} />    
             </label>
+
+            <div className="flex flex-col p-5">
+              {errors.name && (
+                <span className="text-red-500">- A name is required.</span>
+              )}
+              {errors.email && (
+                <span className="text-red-500">- An email is required.</span>
+              )}
+              {errors.comment && (
+                <span className="text-red-500">- A comment is required.</span>
+              )}
+            </div>
+       
+           
+            <input type='submit' className="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer" />
         </form>
 
     </main>
