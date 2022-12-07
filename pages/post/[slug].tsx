@@ -3,12 +3,23 @@ import Header from "../../components/Header";
 import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 import PortableText from "react-portable-text";
+import { useForm, SubmitHandler } from 'react-hook-form'
+
+interface FormInput {
+  _id: string
+  name: string
+  email: string
+  comment: string
+}
 
 interface Props {
   post: Post;
 }
 
 function Post({ post }: Props) {
+
+  const { register, handleSubmit, formState: {errors} } = useForm<FormInput>()
+
   return (
     <main>
       <Header />
@@ -69,17 +80,21 @@ function Post({ post }: Props) {
         <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
 
         <form className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
-            <label>
-                <span>Name</span>
-                <input type="text" placeholder="John Appleseed" />    
+          <h3 className="text-sm text-yellow-500"> Enjoyed this article?</h3>
+          <h4 className="text-3xl font-bold"> Leave a comment below!</h4>
+          <hr className="py-3 mt-2" />
+
+            <label className="block mb-5">
+                <span className="text-gray-7000">Name</span>
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" type="text" placeholder="John Appleseed" />    
             </label>
-            <label>
-                <span>Email</span>
-                <input type="text" placeholder="John Appleseed" />    
+            <label className="block mb-5">
+                <span className="text-gray-7000">Email</span>
+                <input className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" type="text" placeholder="john.appleseed@email.com" />    
             </label>
-            <label>
-                <span>Comment</span>
-                <textarea placeholder="John Appleseed" rows={8} />    
+            <label className="block mb-5">
+                <span className="text-gray-7000">Comment</span>
+                <textarea className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring" placeholder="I loved this post!" rows={8} />    
             </label>
         </form>
 
