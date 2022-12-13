@@ -28,20 +28,20 @@ export default function Home({ posts }: Props) {
                 <img
                   className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out"
                   src={urlFor(post.mainImage).url()}
-                  alt=""
+                  alt={`${post.title} by ${post.author.name}`}
                 />
               )}
               <div className="flex justify-between p-5 bg-white">
                 <div>
                   <p className="text-lg font-bold">{post.title}</p>
-                  <p className="text-xs mr-4">{post.description}</p>
+                  <p className="text-xs mr-4 w-60">{post.description}</p>
                 </div>
                 <div className="flex flex-col justify-center w-18">
                   {post.author.image && (
                     <img
-                      className="h-12 w-12 rounded-full"
+                      className="h-12 w-12 rounded-full min-w-12"
                       src={urlFor(post.author.image).url()}
-                      alt=""
+                      alt={`${post.title} by ${post.author.name}`}
                     />
                   )}
                   <p className="text-[10px]">{post.author.name}</p>
