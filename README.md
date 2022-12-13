@@ -1,27 +1,15 @@
-# Next.js + Tailwind CSS Example
+Hello everyone!
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+If you follow along my repositories (which seems to be a rare occasion) then you would know that I build projects based on desire. I wanted to build a blog for Red Morrow's website where we (the band members) could write articles about songs, interesting stories, updates for fans to see and read. I want our band to be more than just music and shows - we are three people none different than the fans that listen to us. And furthermore - allow those fans to write comments. 
 
-## Deploy your own
+Now, this is a "medium knockoff" blog built with next.js, typescript and sanity.io. Styled with tailwind CSS. With this built and with blog-building knowledge retained in my brain - I will be able to build one for Red Morrow too (and if I forget - I will just look back to this repo to find my way back).
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Deployment Link:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+https://next-sanity-mediumblog.vercel.app/
 
-## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+### and if you're feeling frisky... 
+Why don't you add an article to this blog? The sanity.io studio is also deployed, which means you can fiddle around to your wishes. (but please, don't delete stuff and don't add obcenities - my future employers might be looking :D )  (and if you are that employer - this is handy for non-tech users that want to write articles without code knowledge)
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+https://medium-blog-write.sanity.studio/
